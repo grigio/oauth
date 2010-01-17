@@ -12,9 +12,7 @@ class TestSignaturePlaintext < Test::Unit::TestCase
     consumer = OAuth::Consumer.new('dpf43f3p2l4k3l03','kd94hf93k423kf44')
     token = OAuth::Token.new('nnch734d00sl2jdk', nil)
 
-    assert OAuth::Signature.verify(request, { :consumer => consumer,
-                                                :token => token,
-                                                :uri => 'http://photos.example.net/photos' } )
+    assert OAuth::Signature.verify(request, { :consumer => consumer, :token => token, :uri => 'http://photos.example.net/photos' })
   end
 
   def test_that_get_request_from_oauth_test_cases_produces_matching_signature_part_two
@@ -23,9 +21,6 @@ class TestSignaturePlaintext < Test::Unit::TestCase
     consumer = OAuth::Consumer.new('dpf43f3p2l4k3l03','kd94hf93k423kf44')
     token = OAuth::Token.new('nnch734d00sl2jdk', 'pfkkdhi9sl3r4s00')
 
-    assert OAuth::Signature.verify(request, { :consumer => consumer,
-                                                :token => token,
-                                                :uri => 'http://photos.example.net/photos' } )
+    assert OAuth::Signature.verify(request, { :consumer => consumer, :token => token, :uri => 'http://photos.example.net/photos' })
   end
-
 end

@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -w -rubygems
+#! /home/kuba/.rvm/rubies/ruby-1.9.1-p378/bin/ruby -w -rubygems
 
 require "oauth/cli"
 

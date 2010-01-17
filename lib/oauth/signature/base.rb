@@ -14,11 +14,6 @@ module OAuth::Signature
       OAuth::Signature.available_methods[signature_method] = self
     end
 
-    def self.digest_class(digest_class = nil)
-      return @digest_class if digest_class.nil?
-      @digest_class = digest_class
-    end
-
     def initialize(request, options = {}, &block)
       raise TypeError unless request.kind_of?(OAuth::RequestProxy::Base)
       @request = request
@@ -59,7 +54,7 @@ module OAuth::Signature
     end
 
     def verify
-      self == self.request.signature
+      self == self.request.signature.first
     end
 
     def signature_base_string
@@ -82,10 +77,6 @@ module OAuth::Signature
 
     def secret
       "#{escape(consumer_secret)}&#{escape(token_secret)}"
-    end
-
-    def digest
-      self.class.digest_class.digest(signature_base_string)
     end
   end
 end
