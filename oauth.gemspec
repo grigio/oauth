@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{drogus-oauth}
+  s.name = %q{oauth}
   s.version = "0.3.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Piotr Sarnacki"]
   s.date = %q{2010-02-25}
   s.default_executable = %q{oauth}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{OAuth Core Ruby implementation}
   s.email = %q{drogus@gmail.com}
   s.executables = ["oauth"]
   s.extra_rdoc_files = [
@@ -112,7 +112,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{OAuth Core Ruby implementation}
   s.test_files = [
     "test/cases/oauth_case.rb",
      "test/cases/spec/1_0-final/test_construct_request_url.rb",
