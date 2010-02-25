@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 class StubbedToken < OAuth::RequestToken
   define_method :build_authorize_url_promoted do |root_domain, params|

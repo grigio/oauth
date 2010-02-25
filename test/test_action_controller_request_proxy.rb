@@ -1,13 +1,14 @@
-gem 'actionpack','2.2.2'
-require File.dirname(__FILE__) + '/test_helper.rb'
+gem 'actionpack','>= 3.0.0'
+require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 require 'oauth/request_proxy/action_controller_request'
-require 'action_controller/test_process'
+require 'action_dispatch/testing/test_process'
+require 'action_controller/test_case'
 
 class ActionControllerRequestProxyTest < Test::Unit::TestCase
   def request_proxy(request_method = :get, uri_params = {}, body_params = {})
     request = ActionController::TestRequest.new
-    request.set_REQUEST_URI('/')
+    request.request_uri = '/'
 
     case request_method
     when :post

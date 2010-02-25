@@ -1,38 +1,56 @@
-%w[rubygems rake rake/clean fileutils newgem rubigen hoe].each { |f| require f }
-$LOAD_PATH << File.dirname(__FILE__) + '/lib'
-require 'oauth'
-require 'oauth/version'
+require 'rubygems'
+require 'rake'
 
-# Generate all the Rake tasks
-# Run 'rake -T' to see list of generated tasks (from gem root directory)
-$hoe = Hoe.spec 'oauth' do |p|
-  p.author = ['Pelle Braendgaard','Blaine Cook','Larry Halff','Jesse Clark','Jon Crosby', 'Seth Fitzsimmons']
-  p.email = "oauth-ruby@googlegroups.com"
-  p.description = "OAuth Core Ruby implementation"
-  p.summary = p.description
-  p.changes              = p.paragraphs_of("History.txt", 0..1).join("\n\n")
-  p.readme_file = "README.rdoc"
-  p.rubyforge_name       = p.name # TODO this is default value
-  p.url = "http://oauth.rubyforge.org"
-
-  p.extra_deps         = [
-    ['ruby-hmac','>= 0.3.1']
-  ]
-  p.extra_dev_deps = [
-    ['newgem', ">= #{::Newgem::VERSION}"],
-    ['actionpack'],
-    ['rack'],
-    ['mocha'],
-  ]
-
-  p.clean_globs |= %w[**/.DS_Store tmp *.log **/.*.sw? *.gem .config **/.DS_Store]
-  path = (p.rubyforge_name == p.name) ? p.rubyforge_name : "\#{p.rubyforge_name}/\#{p.name}"
-  p.remote_rdoc_dir = File.join(path.gsub(/^#{p.rubyforge_name}\/?/,''), 'rdoc')
-  p.rsync_args = '-av --delete --ignore-errors'
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gem|
+    gem.name = "oauth"
+    gem.summary = %Q{TODO: one-line summary of your gem}
+    gem.description = %Q{TODO: longer description of your gem}
+    gem.email = "drogus@gmail.com"
+    gem.homepage = "http://github.com/drogus/oauth"
+    gem.authors = ["Piotr Sarnacki"]
+    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.add_dependency('ruby-hmac', '>= 0.3.1')
+    gem.add_development_dependency('actionpack')
+    gem.add_development_dependency('rack')
+    gem.add_development_dependency('mocha')
+  end
+  Jeweler::GemcutterTasks.new
+rescue LoadError
+  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
 end
 
-require 'newgem/tasks' # load /tasks/*.rake
-Dir['tasks/**/*.rake'].each { |t| load t }
+require 'rake/testtask'
+Rake::TestTask.new(:test) do |test|
+  test.libs << 'lib' << 'test'
+  test.pattern = 'test/**/test_*.rb'
+  test.verbose = true
+end
 
-# TODO - want other tests/tasks run by default? Add them to the list
-# task :default => [:spec, :features]
+begin
+  require 'rcov/rcovtask'
+  Rcov::RcovTask.new do |test|
+    test.libs << 'test'
+    test.pattern = 'test/**/test_*.rb'
+    test.verbose = true
+  end
+rescue LoadError
+  task :rcov do
+    abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
+  end
+end
+
+task :test => :check_dependencies
+
+task :default => :test
+
+require 'rake/rdoctask'
+Rake::RDocTask.new do |rdoc|
+  version = File.exist?('VERSION') ? File.read('VERSION') : ""
+
+  rdoc.rdoc_dir = 'rdoc'
+  rdoc.title = "oauth #{version}"
+  rdoc.rdoc_files.include('README*')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+end

@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/test_helper.rb'
+require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 require 'oauth/request_proxy/typhoeus_request'
 require 'typhoeus'
 class TyphoeusRequestProxyTest < Test::Unit::TestCase
