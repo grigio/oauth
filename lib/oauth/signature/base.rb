@@ -14,6 +14,11 @@ module OAuth::Signature
       OAuth::Signature.available_methods[signature_method] = self
     end
 
+    def self.digest_class(digest_class = nil)
+      return @digest_class if digest_class.nil?
+      @digest_class = digest_class
+    end
+
     def initialize(request, options = {}, &block)
       raise TypeError unless request.kind_of?(OAuth::RequestProxy::Base)
       @request = request
