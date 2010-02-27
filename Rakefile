@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "oauth"
+    gem.name = "drogus-oauth"
     gem.summary = %Q{OAuth Core Ruby implementation}
     gem.description = %Q{OAuth Core Ruby implementation}
     gem.email = "drogus@gmail.com"

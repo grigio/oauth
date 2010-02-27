@@ -4,12 +4,12 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{oauth}
+  s.name = %q{drogus-oauth}
   s.version = "0.3.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Piotr Sarnacki"]
-  s.date = %q{2010-02-25}
+  s.date = %q{2010-02-27}
   s.default_executable = %q{oauth}
   s.description = %q{OAuth Core Ruby implementation}
   s.email = %q{drogus@gmail.com}
@@ -111,7 +111,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/drogus/oauth}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.5}
   s.summary = %q{OAuth Core Ruby implementation}
   s.test_files = [
     "test/cases/oauth_case.rb",
