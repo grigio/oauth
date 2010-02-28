@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
      ".gitignore",
      "History.txt",
      "LICENSE",
-     "License.txt",
      "Manifest.txt",
      "README.rdoc",
      "Rakefile",
