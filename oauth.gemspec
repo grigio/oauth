@@ -15,13 +15,15 @@ Gem::Specification.new do |s|
   s.email = %q{drogus@gmail.com}
   s.executables = ["oauth"]
   s.extra_rdoc_files = [
-    "README.rdoc",
+    "LICENSE",
+     "README.rdoc",
      "TODO"
   ]
   s.files = [
     ".document",
      ".gitignore",
      "History.txt",
+     "LICENSE",
      "License.txt",
      "Manifest.txt",
      "README.rdoc",
@@ -112,7 +114,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/drogus/oauth}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.5}
   s.summary = %q{OAuth Core Ruby implementation}
   s.test_files = [
     "test/cases/oauth_case.rb",
