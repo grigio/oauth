@@ -9,24 +9,25 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Piotr Sarnacki"]
-  s.date = %q{2010-02-25}
+  s.date = %q{2010-02-28}
   s.default_executable = %q{oauth}
   s.description = %q{OAuth Core Ruby implementation}
   s.email = %q{drogus@gmail.com}
   s.executables = ["oauth"]
   s.extra_rdoc_files = [
-    "LICENSE",
-     "README.rdoc",
+    "README.rdoc",
      "TODO"
   ]
   s.files = [
-    ".gitignore",
+    ".document",
+     ".gitignore",
      "History.txt",
      "License.txt",
      "Manifest.txt",
      "README.rdoc",
      "Rakefile",
      "TODO",
+     "VERSION",
      "bin/oauth",
      "examples/yql.rb",
      "lib/oauth.rb",
