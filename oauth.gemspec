@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Piotr Sarnacki"]
-  s.date = %q{2010-02-28}
+  s.date = %q{2010-03-08}
   s.default_executable = %q{oauth}
   s.description = %q{OAuth Core Ruby implementation}
   s.email = %q{drogus@gmail.com}
@@ -89,6 +89,7 @@ Gem::Specification.new do |s|
      "test/keys/rsa.pem",
      "test/test_access_token.rb",
      "test/test_action_controller_request_proxy.rb",
+     "test/test_cli.rb",
      "test/test_consumer.rb",
      "test/test_helper.rb",
      "test/test_hmac_sha1.rb",
@@ -113,32 +114,33 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/drogus/oauth}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{OAuth Core Ruby implementation}
   s.test_files = [
-    "test/cases/oauth_case.rb",
-     "test/cases/spec/1_0-final/test_construct_request_url.rb",
-     "test/cases/spec/1_0-final/test_normalize_request_parameters.rb",
-     "test/cases/spec/1_0-final/test_parameter_encodings.rb",
-     "test/cases/spec/1_0-final/test_signature_base_strings.rb",
-     "test/integration/consumer_test.rb",
-     "test/test_access_token.rb",
-     "test/test_action_controller_request_proxy.rb",
-     "test/test_consumer.rb",
-     "test/test_helper.rb",
-     "test/test_hmac_sha1.rb",
-     "test/test_net_http_client.rb",
-     "test/test_net_http_request_proxy.rb",
-     "test/test_oauth_helper.rb",
-     "test/test_rack_request_proxy.rb",
-     "test/test_request_token.rb",
-     "test/test_rsa_sha1.rb",
-     "test/test_server.rb",
-     "test/test_signature.rb",
-     "test/test_signature_base.rb",
-     "test/test_signature_plain_text.rb",
+    "test/test_signature_plain_text.rb",
      "test/test_token.rb",
+     "test/test_consumer.rb",
      "test/test_typhoeus_request_proxy.rb",
+     "test/test_request_token.rb",
+     "test/cases/oauth_case.rb",
+     "test/cases/spec/1_0-final/test_normalize_request_parameters.rb",
+     "test/cases/spec/1_0-final/test_signature_base_strings.rb",
+     "test/cases/spec/1_0-final/test_construct_request_url.rb",
+     "test/cases/spec/1_0-final/test_parameter_encodings.rb",
+     "test/test_net_http_client.rb",
+     "test/test_helper.rb",
+     "test/test_access_token.rb",
+     "test/test_hmac_sha1.rb",
+     "test/integration/consumer_test.rb",
+     "test/test_signature_base.rb",
+     "test/test_rsa_sha1.rb",
+     "test/test_net_http_request_proxy.rb",
+     "test/test_rack_request_proxy.rb",
+     "test/test_signature.rb",
+     "test/test_cli.rb",
+     "test/test_oauth_helper.rb",
+     "test/test_server.rb",
+     "test/test_action_controller_request_proxy.rb",
      "examples/yql.rb"
   ]
 
