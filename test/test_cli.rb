@@ -6,6 +6,6 @@ class TestCLI < Test::Unit::TestCase
   end
   
   def test_oauth_command
-    assert_equal "OAuth for Ruby #{OAuth::VERSION}\n", `ruby bin/oauth version`
+    assert_equal `ruby -Ilib bin/oauth version`, "OAuth for Ruby #{OAuth::VERSION}\n"
   end
 end
