@@ -1,4 +1,4 @@
-gem 'actionpack','>= 3.0.0'
+# gem 'actionpack','>= 3.0.0'
 require File.expand_path(File.dirname(__FILE__) + '/test_helper.rb')
 
 require 'oauth/request_proxy/action_controller_request'
